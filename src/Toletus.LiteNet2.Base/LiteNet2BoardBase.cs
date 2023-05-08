@@ -1,5 +1,4 @@
-﻿using NLog;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -13,7 +12,7 @@ namespace Toletus.LiteNet2.Base
 {
     public class LiteNet2BoardBase
     {
-        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        public static Action<string>? Log;
 
         public const int Port = 7878;
 
@@ -78,7 +77,7 @@ namespace Toletus.LiteNet2.Base
 
         private async Task Response()
         {
-            Logger.Debug("Response start");
+            Log?.Invoke("Response start");
 
             var buffer = new byte[1024];
             try
@@ -106,23 +105,23 @@ namespace Toletus.LiteNet2.Base
             }
             catch (ObjectDisposedException e)
             {
-                Logger.Debug($"Response ObjectDisposedException {e.ToLogString(Environment.StackTrace)}");
+                Log?.Invoke($"Response ObjectDisposedException {e.ToLogString(Environment.StackTrace)}");
             }
             catch (System.IO.IOException e)
             {
-                Logger.Debug($"Connection closed. Receive response finised. (IOException)");
+                Log?.Invoke($"Connection closed. Receive response finised. (IOException)");
                 TcpClient.Close();
                 throw;
             }
             catch (Exception e)
             {
-                Logger.Debug($"Response Exception {e.ToLogString(Environment.StackTrace)}");
+                Log?.Invoke($"Response Exception {e.ToLogString(Environment.StackTrace)}");
                 Close();
                 throw;
             }
             finally
             {
-                Logger.Debug("Response finally");
+                Log?.Invoke("Response finally");
             }
         }
 
