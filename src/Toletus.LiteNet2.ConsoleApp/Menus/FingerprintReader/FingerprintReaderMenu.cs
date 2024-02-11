@@ -10,8 +10,8 @@ namespace Toletus.LiteNet2.ConsoleApp.Menus.FingerprintReader;
 
 internal static class FingerprintReaderMenu
 {
-    private static TcpClient _client;
-    private static Thread _responseThread;
+    private static TcpClient? _client;
+    private static Thread? _responseThread;
 
     public static void Menu(IPAddress ip)
     {

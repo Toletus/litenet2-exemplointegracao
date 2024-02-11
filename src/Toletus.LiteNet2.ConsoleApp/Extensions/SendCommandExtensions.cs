@@ -5,7 +5,7 @@ namespace Toletus.LiteNet2.ConsoleApp.Extensions;
 
 internal static class SendCommandExtensions
 {
-    public static void Send(this SendCommand sendCommand, TcpClient client)
+    public static void Send(this SendCommand sendCommand, TcpClient? client)
     {
         var stream = client?.GetStream();
         stream?.Write(sendCommand.Payload, 0, sendCommand.Payload.Length);
