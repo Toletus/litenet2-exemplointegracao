@@ -2,33 +2,32 @@
 using Toletus.LiteNet2.Base;
 using Toletus.LiteNet2.Command.Enums;
 
-namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet
+namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet;
+
+internal class LiteNetSetEntryClockwiseMenu
 {
-    internal class LiteNetSetEntryClockwiseMenu
+    public static void Menu(LiteNet2BoardBase liteNet2)
     {
-        public static void Menu(LiteNet2BoardBase liteNet2)
+        while (true)
         {
-            while (true)
+            Console.WriteLine("");
+            Console.WriteLine($"{Commands.SetEntryClockwise.Humanize()}:");
+            Console.WriteLine($"     0 - True");
+            Console.WriteLine($"     1 - False");
+            Console.WriteLine($" other - Return");
+
+            var entradaGiroSentidoHorario = Console.ReadLine();
+
+            switch (entradaGiroSentidoHorario)
             {
-                Console.WriteLine("");
-                Console.WriteLine($"{Commands.SetEntryClockwise.Humanize()}:");
-                Console.WriteLine($"     0 - True");
-                Console.WriteLine($"     1 - False");
-                Console.WriteLine($" other - Return");
-
-                var entradaGiroSentidoHorario = Console.ReadLine();
-
-                switch (entradaGiroSentidoHorario)
-                {
-                    case "0":
-                        liteNet2.Send(Commands.GetEntryClockwise, BitConverter.GetBytes(0x01));
-                        break;
-                    case "1":
-                        liteNet2.Send(Commands.GetEntryClockwise, BitConverter.GetBytes(0x00));
-                        break;
-                    default:
-                        return;
-                }
+                case "0":
+                    liteNet2.Send(Commands.GetEntryClockwise, BitConverter.GetBytes(0x01));
+                    break;
+                case "1":
+                    liteNet2.Send(Commands.GetEntryClockwise, BitConverter.GetBytes(0x00));
+                    break;
+                default:
+                    return;
             }
         }
     }

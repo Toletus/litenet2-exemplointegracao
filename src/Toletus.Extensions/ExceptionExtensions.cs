@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Toletus.Extensions
+namespace Toletus.Extensions;
+
+public static class ExceptionExtensions
 {
-    public static class ExceptionExtensions
+    /// <summary>
+    ///  Provides full stack trace for the exception that occurred.
+    /// </summary>
+    /// <param name="exception">Exception object.</param>
+    /// <param name="environmentStackTrace">Environment stack trace, for pulling additional stack frames.</param>
+    public static string ToLogString(this Exception exception, string environmentStackTrace)
     {
-        /// <summary>
-        ///  Provides full stack trace for the exception that occurred.
-        /// </summary>
-        /// <param name="exception">Exception object.</param>
-        /// <param name="environmentStackTrace">Environment stack trace, for pulling additional stack frames.</param>
-        public static string ToLogString(this Exception exception, string environmentStackTrace)
-        {
             var environmentStackTraceLines =
                 GetUserStackTraceLines(environmentStackTrace);
 
@@ -39,8 +39,8 @@ namespace Toletus.Extensions
             return logMessage;
         }
 
-        public static string MessagesToString(this Exception ex)
-        {
+    public static string MessagesToString(this Exception ex)
+    {
             var ret = ex.Message;
 
             while (ex.InnerException != null)
@@ -52,26 +52,25 @@ namespace Toletus.Extensions
             return ret;
         }
 
-        /// <summary>
-        ///  Gets a list of stack frame lines, as strings.
-        /// </summary>
-        /// <param name="stackTrace">Stack trace string.</param>
-        private static List<string> GetStackTraceLines(string stackTrace)
-        {
+    /// <summary>
+    ///  Gets a list of stack frame lines, as strings.
+    /// </summary>
+    /// <param name="stackTrace">Stack trace string.</param>
+    private static List<string> GetStackTraceLines(string stackTrace)
+    {
             return stackTrace.Split(new[] { Environment.NewLine }, StringSplitOptions.None).ToList();
         }
 
-        /// <summary>
-        ///  Gets a list of stack frame lines, as strings, only including those for which line number is known.
-        /// </summary>
-        /// <param name="fullStackTrace">Full stack trace, including external code.</param>
-        private static List<string> GetUserStackTraceLines(string fullStackTrace)
-        {
+    /// <summary>
+    ///  Gets a list of stack frame lines, as strings, only including those for which line number is known.
+    /// </summary>
+    /// <param name="fullStackTrace">Full stack trace, including external code.</param>
+    private static List<string> GetUserStackTraceLines(string fullStackTrace)
+    {
             var regex = new Regex(@"([^\)]*\)) in (.*):line (\d)*$");
 
             var stackTraceLines = GetStackTraceLines(fullStackTrace);
 
             return stackTraceLines.Where(stackTraceLine => regex.IsMatch(stackTraceLine)).ToList();
         }
-    }
 }

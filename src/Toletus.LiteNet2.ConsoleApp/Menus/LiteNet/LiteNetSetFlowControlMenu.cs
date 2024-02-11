@@ -1,12 +1,12 @@
 ﻿using Toletus.LiteNet2.Base;
 using Toletus.LiteNet2.Command.Enums;
 
-namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet
+namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet;
+
+internal class LiteNetSetFlowControlMenu
 {
-    internal class LiteNetSetFlowControlMenu
+    public static void Menu(LiteNet2BoardBase liteNet2)
     {
-        public static void Menu(LiteNet2BoardBase liteNet2)
-        {
             while (true)
             {
                 Console.WriteLine("");
@@ -26,5 +26,4 @@ namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet
                 liteNet2.Send(Commands.SetFlowControl, (int)flow);
             }
         }
-    }
 }

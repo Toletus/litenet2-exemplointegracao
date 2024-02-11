@@ -2,12 +2,12 @@
 using Toletus.LiteNet2.Base;
 using Toletus.LiteNet2.Command.Enums;
 
-namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet
+namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet;
+
+internal class LiteNetSetBoolMenu
 {
-    internal class LiteNetSetBoolMenu
+    public static void Menu(LiteNet2BoardBase liteNet2, Commands command)
     {
-        public static void Menu(LiteNet2BoardBase liteNet2, Commands command)
-        {
             while (true)
             {
                 Console.WriteLine("");
@@ -25,5 +25,4 @@ namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet
                 Console.WriteLine($"The {command.Humanize(LetterCasing.LowerCase)} was setted as {int.Parse(option) == 1}");
             }
         }
-    }
 }
