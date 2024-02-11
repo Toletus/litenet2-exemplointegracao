@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
 using Toletus.SM25.Command;
 
-namespace Toletus.LiteNet2.ConsoleApp.Menus.FingerprintReader;
+namespace Toletus.LiteNet2.ConsoleApp.Extensions;
 
 internal static class SendCommandExtensions
 {

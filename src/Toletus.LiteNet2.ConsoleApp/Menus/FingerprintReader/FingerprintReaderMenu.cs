@@ -2,6 +2,7 @@
 using System.Net.Sockets;
 using Humanizer;
 using Toletus.Extensions;
+using Toletus.LiteNet2.ConsoleApp.Extensions;
 using Toletus.SM25.Command;
 using Toletus.SM25.Command.Enums;
 
