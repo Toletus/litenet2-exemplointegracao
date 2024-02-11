@@ -1,5 +1,6 @@
 ﻿using System;
-using Toletus.LiteNet2.ConsoleApp.LiteNet;
+using Toletus.LiteNet2.ConsoleApp.Menus;
+using Toletus.LiteNet2.ConsoleApp.Menus.LiteNet;
 
 namespace Toletus.LiteNet2.ConsoleApp
 {

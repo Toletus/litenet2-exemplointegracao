@@ -1,8 +1,7 @@
-﻿using System;
-using Toletus.LiteNet2.Base;
+﻿using Toletus.LiteNet2.Base;
 using Toletus.LiteNet2.Command.Enums;
 
-namespace Toletus.LiteNet2.ConsoleApp.LiteNet
+namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet
 {
     internal class LiteNetSetFlowControlMenu
     {

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using Humanizer;
 using Toletus.LiteNet2.Base;
 using Toletus.LiteNet2.Command;
-using Toletus.LiteNet2.ConsoleApp.FingerprintReader;
-using Toletus.LiteNet2.ConsoleApp.LiteNet;
+using Toletus.LiteNet2.ConsoleApp.Menus.FingerprintReader;
+using Toletus.LiteNet2.ConsoleApp.Menus.LiteNet;
 
-namespace Toletus.LiteNet2.ConsoleApp
+namespace Toletus.LiteNet2.ConsoleApp.Menus
 {
     internal static class MainMenu
     {

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toletus.LiteNet2.Command", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toletus.SM25.Command", "src\Toletus.SM25.Command\Toletus.SM25.Command.csproj", "{36C6EA2F-24DA-424C-82CF-1CC54B5A3A6F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleApp", "ConsoleApp", "{215DBF13-5ED0-46C1-ABFA-CFCE2DAECEEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,5 +47,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD372B52-0FF9-4E06-B3D6-2DC5F70E4B7C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76545655-3752-49EA-88BC-2BF984F05383} = {215DBF13-5ED0-46C1-ABFA-CFCE2DAECEEE}
 	EndGlobalSection
 EndGlobal

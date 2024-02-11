@@ -1,15 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using System.Threading;
 using Humanizer;
 using Toletus.Extensions;
 using Toletus.SM25.Command;
 using Toletus.SM25.Command.Enums;
 
-namespace Toletus.LiteNet2.ConsoleApp.FingerprintReader
+namespace Toletus.LiteNet2.ConsoleApp.Menus.FingerprintReader
 {
     internal static class FingerprintReaderMenu
     {

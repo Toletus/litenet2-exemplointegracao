@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using Toletus.LiteNet2.Base.Util;
 
-namespace Toletus.LiteNet2.ConsoleApp.LiteNet
+namespace Toletus.LiteNet2.ConsoleApp.Menus.LiteNet
 {
     internal class LiteNetSearchMenu
     {
