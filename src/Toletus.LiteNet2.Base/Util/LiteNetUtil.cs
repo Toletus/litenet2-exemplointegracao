@@ -52,8 +52,8 @@ public class LiteNetUtil
         if (!device.Contains(ToletusLiteNet2))
             return;
 
-        var m = Regex.Match(device, @"@(\d+)");
-        var id = (UInt16)Convert.ToInt16(m.Groups[1].Value);
+        var match = Regex.Match(device, @"@(\d+)");
+        var id = (UInt16)Convert.ToInt16(match.Groups[1].Value);
 
         var liteNet = new LiteNet2BoardBase(response.Result.RemoteEndPoint.Address, id);
 
