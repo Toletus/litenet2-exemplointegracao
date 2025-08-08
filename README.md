@@ -14,9 +14,9 @@ Aplicação **C# ConsoleApp** de exemplo para integração com a placa **Toletus
 
 ---
 
-# Alteração no Retorno da Aplicação – Versão V2.3.1 R0
+# Alteração no Retorno à Aplicação – Versão V2.3.1 R0
 
-A partir da versão **V2.3.1 R0**, o retorno da aplicação passou a incluir o **IP do computador conectado**.
+A partir da versão **V2.3.1 R0**, o retorno à aplicação (`response` da catraca) ao comando `prc`(procura) `request` passou a incluir o **IP do computador conectado**.
 
 ## Formato Anterior
 ```text
@@ -29,11 +29,7 @@ TOLETUS LiteNet2@[ID] c=[IP do computador conectado]
 ```
 
 - Se o dispositivo estiver **conectado**, será exibido o respectivo **IP**.
-- Caso contrário, será exibida a palavra:
-```text
-none
-```
-
+- Caso contrário, será exibida a palavra: **none**
 ---
 
 ## Exemplo no Código
@@ -47,10 +43,6 @@ Na classe `LiteNetUtil`, método `OnUdpResponse`:
 2. **Conversão para UInt16**
     - Na segunda linha, os dígitos capturados são extraídos e convertidos para um número inteiro de 16 bits (`Int16`), e em seguida para `UInt16`.
     - Isso permite identificar corretamente o **ID do dispositivo**.
-
----
-
-## Exemplo de Código
 
 ```csharp
 // Captura os dígitos após o '@'
